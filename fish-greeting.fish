@@ -8,7 +8,7 @@ function fish_greeting
     set fish_greeting "                 "$outer"___               "$text"User: $user"$outer"
       ___======____="$middle"-"$inner"-"$middle"-="$outer")              "$text"Host: $host"$outer"
     /T            \_"$inner"--="$middle"=="$outer")             "$text"Test"$outer"
-    ""["" \ "$middle"("$inner"O"$middle")   "$outer"\~    \_"$inner"-="$middle"="$outer")             "$text"Editor: $EDITOR"$outer"
+    [ \ "$middle"("$inner"O"$middle")   "$outer"\~    \_"$inner"-="$middle"="$outer")             "$text"Editor: $EDITOR"$outer"
      \      / )J"$middle"~~    "$outer"\\"$inner"-="$outer")             "$text"Time: (printf (date "+$c2%H$c0:$c2%M$c0:$c2%S"))"$outer"
       \\\\___/  )JJ"$middle"~"$inner"~~   "$outer"\)              "$text"Home Directory: $HOME"$outer"
        \_____/JJJ"$middle"~~"$inner"~~    "$outer"\\             "$text"Test"$outer"
