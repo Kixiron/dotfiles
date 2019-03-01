@@ -18,4 +18,3 @@ function fish_title
         echo $command
     end
 end
-funcsave fish_title
