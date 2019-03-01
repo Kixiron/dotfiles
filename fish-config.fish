@@ -19,7 +19,6 @@ set -g _green 50FA7B
 
 # Programming
 abbr --add --global py python3
-abbr --add --global rustrun (clear; cargo run)
 
 # Git
 abbr --add --global gpull git pull
