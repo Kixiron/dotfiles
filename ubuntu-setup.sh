@@ -85,7 +85,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 echo "[Done]"
 
 # Configure fish
-curl https://gist.githubusercontent.com/Kixiron/e8416829fe13fd5f7da5af8d81afd952/raw/e3084ca765077c3dfd9b1168a141abccb32d027c/fish-setup.fish | fish
+curl https://cdn.staticaly.com/gh/Kixiron/dotfiles/0e0e9d4c/fish-setup.fish | fish
 
 # Finish
 echo "[Finishing]"
