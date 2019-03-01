@@ -2,9 +2,9 @@
 
 # Update
 echo "[Updating and Upgrading]"
-apt-get update
-apt-get upgrade
-apt-get dist-upgrade
+apt update
+apt upgrade
+apt dist-upgrade
 echo "[Done]"
 
 # Setup
@@ -31,9 +31,9 @@ echo "[Installing Visual Studio Code]"
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-apt-get install apt-transport-https
-apt-get update
-apt-get install code
+apt install apt-transport-https
+apt update
+apt install code
 echo "[Done]"
 
 # Git
@@ -68,9 +68,9 @@ echo "[Done]"
 
 # NPM
 echo "[Installing NPM]"
-apt-get install curl software-properties-common
+apt install curl software-properties-common
 curl -sL https://deb.nodesource.com/setup_11.x | -E bash -
-apt-get install nodejs
+apt install nodejs
 echo "[Done]"
 
 # Typescript
@@ -90,9 +90,9 @@ curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-setup.fish |
 # Finish
 echo "[Finishing]"
 snap refresh
-apt-get update
-apt-get upgrade
-apt-get dist-upgrade
+apt update
+apt upgrade
+apt dist-upgrade
 echo "[Done]"
 
 # Clean cache
