@@ -31,9 +31,9 @@ set outer (set_color $_dark_blue)
 set middle (set_color $_purple)
 set inner (set_color $_cyan)
 set text (set_color $_orange)
-set fish_greeting '                 '$outer'___                        '$text'Test
-  ___======____='$middle'-'$inner'-'$middle'-='$outer')                   '$text'Test
-/T            \_'$inner'--='$middle'=='$outer')                  '$text'Test
+set fish_greeting '                 '$outer'___               '$text'Test
+  ___======____='$middle'-'$inner'-'$middle'-='$outer')              '$text'Test
+/T            \_'$inner'--='$middle'=='$outer')             '$text'Test
 ''['' \ '$middle'('$inner'O'$middle')   '$outer'\~    \_'$inner'-='$middle'='$outer')             '$text'Test
  \      / )J'$middle'~~    '$outer'\\'$inner'-='$outer')             '$text'Test
   \\\\___/  )JJ'$middle'~'$inner'~~   '$outer'\)              '$text'Test
