@@ -28,7 +28,6 @@ abbr --add --global gco git checkout
 abbr --add --global gcom git commit
 
 # Fish Greeting
-
 function fish_greeting
     set outer (set_color $_dark_blue)
     set middle (set_color $_purple)
@@ -51,4 +50,3 @@ function fish_greeting
                            (UU)        "$text"Test"
 end
 funcsave fish_greeting
-

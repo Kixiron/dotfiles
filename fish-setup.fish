@@ -1,11 +1,5 @@
 # Fish Setup
-
 echo "[Setting Up Fish]"
-
-echo "[Removing Defaults]"
-rm "$__fish_data_dir/functions/fish_prompt.fish"
-rm "$__fish_data_dir/functions/fish_title.fish"
-echo "[Done]"
 
 echo "[Adding Config]"
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-config.fish > "$__fish_config_dir/config.fish"
