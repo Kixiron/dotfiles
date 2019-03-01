@@ -41,7 +41,7 @@ set fish_greeting '                 '$outer'___               '$text'User: $user
    '$middle'/ '$outer'\  '$inner', \\'$outer'J'$middle'~~~'$inner'~~     '$middle'\\            '$text'Fish Version: $FISH_VERSION'$outer'
   (-'$inner'\)'$outer'\='$middle'|'$inner'\\\\\\'$middle'~~'$inner'~~       '$middle'L_'$inner'_         '$text'Kernel: $uname'$outer'
   '$middle'('$outer'\\'$middle'\\)  ('$inner'\\'$middle'\\\)'$outer'_           '$inner'\=='$middle'__     '$text'Network: (uname -n)'$outer'
-   '$outer'\V    '$middle'\\\\'$outer'\) =='$middle'=_____   '$inner'\\\\\\\\'$middle'\\\\    '$text'CPU Load: (top -bn1 | grep load | awk '{printf "%.2f%%\t\t\n", $(NF-2)}')'$outer'
+   '$outer'\V    '$middle'\\\\'$outer'\) =='$middle'=_____   '$inner'\\\\\\\\'$middle'\\\\    '$text'CPU Load: (top -bn1 | grep load | awk '{printf "%.2f%%\t\t\n", (NF-2)}')'$outer'
           '$outer'\V)     \_) '$middle'\\\\'$inner'\\\\JJ\\'$middle'J\)   '$text'Processes Running: (grep 'procs_running' /proc/stat)'$outer'
                       '$outer'/'$middle'J'$inner'\\'$middle'J'$outer'T\\'$middle'JJJ'$outer'J)  '$text'Free Memory: (free -m | awk 'NR==2{printf "%.2f%%\t\t", $3 * 100 / $2}')'$outer'
                       (J'$middle'JJ'$outer'| \UUU)  '$text'Disk Space Used: (df -h | awk '$NF=="/"{printf "%s\t\t", $5}')'$outer'
