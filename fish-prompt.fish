@@ -19,10 +19,25 @@ function fish_prompt
     echo "]"
 
     # Set Prompt
-    echo -n (pwd)
+    set -l command (echo $_)
+    if test $command = "fish"
+        if git rev-parse --git-dir > /dev/null ^ /dev/null
+            set -l git_dir (git rev-parse --git-dir)
+            if test $git_dir = ".git"
+                echo -n (basename (pwd))
+            else
+                echo -n (basename (dirname $git_dir))
+            end
+        else
+            echo -n (pwd)
+        end
+    else
+        echo -n (pwd)
+    end
     set_color $_pink
     echo -n " ~> "
 
     # Set Final Text Color
     set_color $_purple
 end
+funcsave fish_prompt

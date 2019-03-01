@@ -8,6 +8,9 @@ curl https://raw.githubusercontent.com/Kixiron/dotfiles/0e0e9d4c/fish-config.fis
 echo "[Adding Prompt]"
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/0e0e9d4c/fish-prompt.fish > "$__fish_config_dir/functions/fish_prompt.fish"
 
+echo "[Adding Title]"
+curl  > "$__fish_config_dir/functions/fish_title.fish"
+
 echo "[Setting Fish to Default Shell]"
 fish --login
 
