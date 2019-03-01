@@ -11,6 +11,9 @@ curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-prompt.fish 
 echo "[Adding Title]"
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-title.fish > "$__fish_config_dir/functions/fish_title.fish"
 
+echo "[Adding Greeting]"
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-greeting.fish > "$__fish_config_dir/functions/fish_greeting.fish"
+
 echo "[Setting Fish to Default Shell]"
 fish --login
 
