@@ -45,4 +45,4 @@ set fish_greeting '                 '$outer'___               '$text'Test'$outer
           '$outer'\V)     \_) '$middle'\\\\'$inner'\\\\JJ\\'$middle'J\)   '$text'Test'$outer'
                       '$outer'/'$middle'J'$inner'\\'$middle'J'$outer'T\\'$middle'JJJ'$outer'J)  '$text'Test'$outer'
                       (J'$middle'JJ'$outer'| \UUU)  '$text'Test'$outer'
-                       (UU)    '$text'Test'
+                       (UU)        '$text'Test'
