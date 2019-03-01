@@ -30,7 +30,7 @@ abbr --add --global gcom git commit
 set outer (set_color $_dark_blue)
 set middle (set_color $_purple)
 set inner (set_color $_cyan)
-set text (set_color $_orange)
+set text (set_color $_pink)
 set fish_greeting '                 '$outer'___               '$text'Test'$outer'
   ___======____='$middle'-'$inner'-'$middle'-='$outer')              '$text'Test'$outer'
 /T            \_'$inner'--='$middle'=='$outer')             '$text'Test'$outer'
