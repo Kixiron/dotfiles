@@ -3,13 +3,13 @@
 echo "[Setting up fish]"
 
 echo "[Adding Config]"
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/0e0e9d4c/fish-config.fish > "$__fish_config_dir/config.fish"
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-prompt.fish > "$__fish_config_dir/config.fish"
 
 echo "[Adding Prompt]"
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/0e0e9d4c/fish-prompt.fish > "$__fish_config_dir/functions/fish_prompt.fish"
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-config.fish > "$__fish_config_dir/functions/fish_prompt.fish"
 
 echo "[Adding Title]"
-curl  > "$__fish_config_dir/functions/fish_title.fish"
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-title.fish > "$__fish_config_dir/functions/fish_title.fish"
 
 echo "[Setting Fish to Default Shell]"
 fish --login

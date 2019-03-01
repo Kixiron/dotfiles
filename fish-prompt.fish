@@ -24,14 +24,22 @@ function fish_prompt
         if git rev-parse --git-dir > /dev/null ^ /dev/null
             set -l git_dir (git rev-parse --git-dir)
             if test $git_dir = ".git"
-                echo -n (basename (pwd))
+                set_color $_green
+                echo -n (basename)
+                set_color $_dark_blue
+                echo -n (pwd)
             else
-                echo -n (basename (dirname $git_dir))
+                set_color $_green
+                echo -n (basename)
+                set_color $_dark_blue
+                echo -n (dirname $git_dir)
             end
         else
+            set_color $_dark_blue
             echo -n (pwd)
         end
     else
+        set_color $_dark_blue
         echo -n (pwd)
     end
     set_color $_pink
