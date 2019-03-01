@@ -1,9 +1,6 @@
 # Fish Prompt
 
 function fish_prompt
-    # Set Background Color
-    set_color -b $_black
-
     # Set Error
     set fish_color_error $_red
 
