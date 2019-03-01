@@ -1,5 +1,6 @@
-# Fish Title
+# ~/.config/fish/functions/fish_title.fish
 
+# Fish Title
 function fish_title
     set -l command (echo $_)
 

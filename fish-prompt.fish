@@ -1,5 +1,6 @@
-# Fish Prompt
+# ~/.config/fish/functions/fish_prompt.fish
 
+# Fish Prompt
 function fish_prompt
     # Set Error
     set fish_color_error $_red

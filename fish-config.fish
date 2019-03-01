@@ -1,5 +1,6 @@
-# Fish Config
+# ~/.config/fish/functions/fish_config.fish
 
+# Fish Config
 # Fish
 set -g user (whoami)
 set -g host (hostname)
