@@ -1,6 +1,11 @@
 # Fish Setup
 
-echo "[Setting up fish]"
+echo "[Setting Up Fish]"
+
+echo "[Removing Defaults]"
+rm "$__fish_data_dir/functions/fish_prompt.fish"
+rm "$__fish_data_dir/functions/fish_title.fish"
+echo "[Done]"
 
 echo "[Adding Config]"
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-config.fish > "$__fish_config_dir/config.fish"
@@ -11,10 +16,7 @@ curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-prompt.fish 
 echo "[Adding Title]"
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-title.fish > "$__fish_config_dir/functions/fish_title.fish"
 
-echo "[Adding Greeting]"
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-greeting.fish > "$__fish_config_dir/functions/fish_greeting.fish"
-
 echo "[Setting Fish to Default Shell]"
 fish --login
 
-echo "[Done setting up fish]"
+echo "[Done Setting Up Fish]"
