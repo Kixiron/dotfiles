@@ -16,18 +16,18 @@ function fish_greeting
     set total_mem (free | awk '/^Mem:/ { print int($2 / 1000000) }')
 
     echo '                 '$o'___
-      ___======____='$m'-'$i'-'$m'-='$o')               '
-    /T            \_'$i'--='$m'=='$o')              '
-    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')              '$t $user'@'$host $o'
+      ___======____='$m'-'$i'-'$m'-='$o')               
+    /T            \_'$i'--='$m'=='$o')              
+    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')              '$t$user'@'$host $o'
      \      / )J'$m'~~    '$o'\\'$i'-='$o')              '$t'OS: '$os $o'
       \\\\___/  )JJ'$m'~'$i'~~   '$o'\)               '$t'CPU: '$cpu $o'
        \_____/JJJ'$m'~~'$i'~~    '$o'\\              '$t'Threads: '$threads $o'
-       '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\             '$t'Memory: '$total_mem $o'
+       '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\             '$t'Memory: '$total_mem'gb' $o'
       (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_          '$t'Resolution: '$resolution $o'
-      '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__      '
-       '$o'\V    '$m'\\\\'$o'\) =='$m'=_____   '$i'\\\\\\\\'$m'\\\\     '
-              '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)    '
-                          '$o'/'$m'J'$i'\\'$m'J'$o'T\\'$m'JJJ'$o'J)   '
-                          (J'$m'JJ'$o'| \UUU)   '
+      '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__      
+       '$o'\V    '$m'\\\\'$o'\) =='$m'=_____   '$i'\\\\\\\\'$m'\\\\     
+              '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)    
+                          '$o'/'$m'J'$i'\\'$m'J'$o'T\\'$m'JJJ'$o'J)   
+                          (J'$m'JJ'$o'| \UUU)   
                            (UU)'(set_color normal)
 end
