@@ -34,9 +34,9 @@ function fish_greeting
     set i (set_color $color_purple)
     set t (set_color $color_pink)
 
-    set os ((head -n1 /etc/issue) (uname -m))
-    set resolution ((xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f1) "x" (xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f2))
-    set uptime (uptime | awk -F'( |,|:)+' '{ print $6, $7",", $8, "hours,", ($12 - int($12) > 0) ? int($12) + 1 : int($12) ,"minutes." }')
+    set os (head -n1 /etc/issue)" "(uname -m)
+    set resolution (xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f1)"x"(xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f2)
+    set uptime (uptime | awk -F'( |,|:)+' '{ print $6, $7",", $8, "hours," }')
     set cpu (lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{ $1=$1 } 1')
     set threads (nproc)
     set total_mem (free | awk '/^Mem:/ { print int($2 / 1000000) }')
