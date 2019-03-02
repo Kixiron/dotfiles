@@ -19,30 +19,9 @@ function fish_prompt
     set_color $_dark_blue
     echo "]"
 
-    # Set Prompt
-    set -l command (echo $_)
-    if test $command = "fish"
-        if git rev-parse --git-dir > /dev/null ^ /dev/null
-            set -l git_dir (git rev-parse --git-dir)
-            if test $git_dir = ".git"
-                set_color $_green
-                echo -n (basename)
-                set_color $_dark_blue
-                echo -n (pwd)
-            else
-                set_color $_green
-                echo -n (basename)
-                set_color $_dark_blue
-                echo -n (dirname $git_dir)
-            end
-        else
-            set_color $_dark_blue
-            echo -n (pwd)
-        end
-    else
-        set_color $_dark_blue
-        echo -n (pwd)
-    end
+    # Prompt
+    set_color $_dark_blue
+    echo -n (pwd)
     set_color $_pink
     echo -n " ~> "
 
