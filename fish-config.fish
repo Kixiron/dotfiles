@@ -34,17 +34,17 @@ function fish_greeting
     set text (set_color $_pink)
     echo (printf "%s\n" \
     "                 " $outer "___               " $text "User: $user" $outer \
-    "  ___======____=" $middle "-" $inner "-" $middle "-=" $outer ")              " $text "Host: $host" $outer \
+    "  ___======____=" $middle "-" $inner "-" $middle "-=" $outer ")              " $text "Test" $outer \
     "/T            \_" $inner "--=" $middle "==" $outer ")             " $text "Test" $outer \
-    "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Editor: $EDITOR" $outer \
-    " \      / )J" $middle "~~    " $outer "\\" $inner "-=" $outer ")             " $text "Time: " (printf (date "+$c2%H$c0:$c2%M$c0:$c2%S")) $outer \
-    "  \\\\___/  )JJ" $middle "~" $inner "~~   " $outer "\)              " $text "Home Directory: $HOME" $outer
+    "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Test" $outer \
+    " \      / )J" $middle "~~    " $outer "\\" $inner "-=" $outer ")             " $text "Test" $outer \
+    "  \\\\___/  )JJ" $middle "~" $inner "~~   " $outer "\)              " $text "Test" $outer
     "   \_____/JJJ" $middle "~~" $inne r"~~    " $outer "\\             " $text "Test" $outer \
-    "   " $middle "/ " $outer "\  " $inner ", \\" $outer "J" $middle "~~~" $inner "~~     " $middle "\\            " $text "Fish Version: $FISH_VERSION" $outer \
-    "  (-" $inner "\)" $outer "\=" $middle "|" $inner "\\\\\\" $middle "~~" $inner "~~       " $middle "L_" $inner "_         " $text "Kernel: $uname" $outer \
-    "  " $middle "(" $outer "\\" $middle "\\)  (" $inner "\\" $middle "\\\)" $outer "_           " $inner "\==" $middle "__     " $text "Network: " (uname -n) $outer \
-    "   " $outer "\V    " $middle"\\\\" $outer "\) ==" $middle "=_____   " $inner "\\\\\\\\" $middle "\\\\    " $text "Test" $outer \
-    "          " $outer "\V)     \_) " $middle "\\\\" $inner "\\\\JJ\\" $middle "J\)   " $text "Processes Running: " (grep "procs_running" /proc/stat) $outer \
+    "   " $middle "/ " $outer "\  " $inner ", \\" $outer "J" $middle "~~~" $inner "~~     " $middle "\\            " $text "Test" $outer \
+    "  (-" $inner "\)" $outer "\=" $middle "|" $inner "\\\\\\" $middle "~~" $inner "~~       " $middle "L_" $inner "_         " $text "Test" $outer \
+    "  " $middle "(" $outer "\\" $middle "\\)  (" $inner "\\" $middle "\\\)" $outer "_           " $inner "\==" $middle "__     " $text "Test" $outer \
+    "   " $outer "\V    " $middle "\\\\" $outer "\) ==" $middle "=_____   " $inner "\\\\\\\\" $middle "\\\\    " $text "Test" $outer \
+    "          " $outer "\V)     \_) " $middle "\\\\" $inner "\\\\JJ\\" $middle "J\)   " $text "Test" $outer \
     "                      " $outer "/" $middle "J" $inner "\\" $middle "J" $outer "T\\" $middle "JJJ" $outer "J)  " $text "Test" $outer \
     "                      (J" $middle "JJ" $outer "| \UUU)  " $text "Test" $outer \
     "                       (UU)        " $text "Test")
