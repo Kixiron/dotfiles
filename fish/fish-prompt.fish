@@ -3,29 +3,29 @@
 # Fish Prompt
 function fish_prompt
     # Set Error
-    set fish_color_error $_red
+    set fish_color_error $color_red
 
     # Set Top Prompt
-    set_color $_cyan
+    set_color $color_cyan
     echo -n $user
-    set_color $_pink
+    set_color $color_pink
     echo -n "@"
-    set_color $_cyan
+    set_color $color_cyan
     echo -n $host
-    set_color $_dark_blue
+    set_color $color_dark_blue
     echo -n " ["
-    set_color $_purple
+    set_color $color_purple
     echo -n (printf (date "+$c2%H$c0:$c2%M$c0:$c2%S"))
-    set_color $_dark_blue
+    set_color $color_dark_blue
     echo "]"
 
     # Prompt
-    set_color $_dark_blue
+    set_color $color_dark_blue
     echo -n (pwd)
-    set_color $_pink
+    set_color $color_pink
     echo -n " ~> "
 
     # Set Final Text Color
-    set_color $_purple
+    set_color $color_purple
 end
 funcsave fish_prompt

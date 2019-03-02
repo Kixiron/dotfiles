@@ -7,14 +7,14 @@ set -g host (hostname)
 set -U EDITOR code
 
 # Colors
-set -g _red FF5555
-set -g _black 212121
-set -g _dark_blue 6272A4
-set -g _pink FF79C6
-set -g _purple BD93F9
-set -g _cyan 8BE9FD
-set -g _orange FFB86C
-set -g _green 50FA7B
+set -g color_red FF5555
+set -g color_black 212121
+set -g color_dark_blue 6272A4
+set -g color_pink FF79C6
+set -g color_purple BD93F9
+set -g color_cyan 8BE9FD
+set -g color_orange FFB86C
+set -g color_green 50FA7B
 
 # Programming
 abbr --add --global py python3
@@ -29,18 +29,21 @@ abbr --add --global gcom git commit
 function fish_greeting
     set mouth "["
     set eye "O"
-    set o (set_color $_dark_blue)
-    set m (set_color $_cyan)
-    set i (set_color $_purple)
-    set t (set_color $_pink)
+    set o (set_color $color_dark_blue)
+    set m (set_color $color_cyan)
+    set i (set_color $color_purple)
+    set t (set_color $color_pink)
+    set shell_prefix "/usr/bin/"
+    set x_dimension (xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+    set y_dimension (xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2)
 
     echo '                 '$o'___
-      ___======____='$m'-'$i'-'$m'-='$o')               '$t'Test'$o'
-    /T            \_'$i'--='$m'=='$o')              '$t'Test
-    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')              '$t'Test'$o'
-     \      / )J'$m'~~    '$o'\\'$i'-='$o')              '$t'Test'$o'
-      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)               '$t'Test'$o'
-       \_____/JJJ'$m'~~'$i'~~    '$o'\\              '$t'Test'$o'
+      ___======____='$m'-'$i'-'$m'-='$o')               '$t'User: $user'$o'
+    /T            \_'$i'--='$m'=='$o')              '$t'Host: $host'$o'
+    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')              '$t'OS: (uname) (uname -m)'$o'
+     \      / )J'$m'~~    '$o'\\'$i'-='$o')              '$t'Uptime: (uptime | awk -F'( |,|:)+' '{print $6,$7",",$8,"hours,",$9,"minutes."}')'$o'
+      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)               '$t'Shell: ($SHELL | sed -e "s/^$shell_prefix//")'$o'
+       \_____/JJJ'$m'~~'$i'~~    '$o'\\              '$t'Resolution: ' $x_dimension 'x' $y_dimension '$o'
        '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\             '$t'Test'$o'
       (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_          '$t'Test'$o'
       '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__      '$t'Test'$o'
