@@ -32,7 +32,7 @@ function fish_greeting
     set middle (set_color $_purple)
     set inner (set_color $_cyan)
     set text (set_color $_pink)
-    set fish_greeting "                 "$outer"___               "$text"User: $user"$outer"
+    echo "                 "$outer"___               "$text"User: $user"$outer"
       ___======____="$middle"-"$inner"-"$middle"-="$outer")              "$text"Host: $host"$outer"
     /T            \_"$inner"--="$middle"=="$outer")             "$text"Test"$outer"
     [ \ "$middle"("$inner"O"$middle")   "$outer"\~    \_"$inner"-="$middle"="$outer")             "$text"Editor: $EDITOR"$outer"
