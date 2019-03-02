@@ -32,8 +32,7 @@ function fish_greeting
     set middle (set_color $_purple)
     set inner (set_color $_cyan)
     set text (set_color $_pink)
-    echo (printf "%s\n" \
-    "                 " $outer "___               " $text "User: $user" $outer \
+    echo "                 " $outer "___               " $text "User: $user" $outer \
     "  ___======____=" $middle "-" $inner "-" $middle "-=" $outer ")              " $text "Test" $outer \
     "/T            \_" $inner "--=" $middle "==" $outer ")             " $text "Test" $outer \
     "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Test" $outer \
@@ -47,6 +46,6 @@ function fish_greeting
     "          " $outer "\V)     \_) " $middle "\\\\" $inner "\\\\JJ\\" $middle "J\)   " $text "Test" $outer \
     "                      " $outer "/" $middle "J" $inner "\\" $middle "J" $outer "T\\" $middle "JJJ" $outer "J)  " $text "Test" $outer \
     "                      (J" $middle "JJ" $outer "| \UUU)  " $text "Test" $outer \
-    "                       (UU)        " $text "Test")
+    "                       (UU)        " $text "Test"
 end
 funcsave fish_greeting
