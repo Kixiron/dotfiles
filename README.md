@@ -1,7 +1,7 @@
 # dotfiles
 
-run `curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/ubuntu-setup.sh | sudo sh` to run all the scripts  
-run `curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-setup.fish | fish` to run the fish configuration
+`curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/ubuntu-setup.sh | sudo sh` to run all the scripts  
+`curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.fish | fish` to run the fish configuration
 
 Uses the [Dracula Theme's](https://draculatheme.com/) color palette
 
