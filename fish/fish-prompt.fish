@@ -28,4 +28,3 @@ function fish_prompt
     # Set Final Text Color
     set_color $color_purple
 end
-funcsave fish_prompt
