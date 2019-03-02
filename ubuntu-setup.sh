@@ -9,21 +9,21 @@ echo "[Done]"
 
 # Setup
 echo "[Setting up]"
-apt install software-properties-common apt-transport-https wget
-apt install apt-transport-https ca-certificates curl software-properties-common
+echo "y" | apt install software-properties-common apt-transport-https wget
+echo "y" | apt install apt-transport-https ca-certificates curl software-properties-common
 echo "[Done]"
 
 # Make Tools
 echo "[Installing Make Tools]"
-apt install make
-apt install automake
-apt install pkg-config
-apt install autoconf
+echo "y" | apt install make
+echo "y" | apt install automake
+echo "y" | apt install pkg-config
+echo "y" | apt install autoconf
 echo "[Done]"
 
 # Snap
 echo "[Installing Snap]"
-apt install snapd
+echo "y" | apt install snapd
 echo "[Done]"
 
 # Visual Studio Code
@@ -31,14 +31,14 @@ echo "[Installing Visual Studio Code]"
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-apt install apt-transport-https
-apt install code
+echo "y" | apt install apt-transport-https
+echo "y" | apt install code
 update-alternatives --set editor /usr/bin/code
 echo "[Done]"
 
 # Git
 echo "[Installing Git]"
-apt install git-all
+echo "y" | apt install git-all
 echo "[Done]"
 
 # Discord
@@ -69,14 +69,14 @@ echo "[Done]"
 
 # Fish
 echo "[Installing Fish]"
-apt install fish
+echo "y" | apt install fish
 echo "[Done]"
 
 # NPM
 echo "[Installing NPM]"
-apt install curl software-properties-common
+echo "y" | apt install curl software-properties-common
 curl -sL https://deb.nodesource.com/setup_11.x | -E bash -
-apt install nodejs
+echo "y" | apt install nodejs
 echo "[Done]"
 
 # Typescript
@@ -90,7 +90,7 @@ curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.f
 # Kubuntu
 echo "[Installing Kubuntu]"
 add-apt-repository ppa:kubuntu-ppa/backports
-apt install kubuntu-desktop
+echo "y" | apt install kubuntu-desktop
 echo "[Done]"
 
 # Plasma Themes
