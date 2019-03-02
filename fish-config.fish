@@ -39,7 +39,7 @@ function fish_greeting
     "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Test" $outer \
     " \      / )J" $middle "~~    " $outer "\\" $inner "-=" $outer ")             " $text "Test" $outer \
     "  \\\\___/  )JJ" $middle "~" $inner "~~   " $outer "\)              " $text "Test" $outer
-    "   \_____/JJJ" $middle "~~" $inne r"~~    " $outer "\\             " $text "Test" $outer \
+    "   \_____/JJJ" $middle "~~" $inner "~~    " $outer "\\             " $text "Test" $outer \
     "   " $middle "/ " $outer "\  " $inner ", \\" $outer "J" $middle "~~~" $inner "~~     " $middle "\\            " $text "Test" $outer \
     "  (-" $inner "\)" $outer "\=" $middle "|" $inner "\\\\\\" $middle "~~" $inner "~~       " $middle "L_" $inner "_         " $text "Test" $outer \
     "  " $middle "(" $outer "\\" $middle "\\)  (" $inner "\\" $middle "\\\)" $outer "_           " $inner "\==" $middle "__     " $text "Test" $outer \
