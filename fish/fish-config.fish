@@ -49,6 +49,6 @@ function fish_greeting
               '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)  '$t'Test
                           '$o'/'$m'J'$i'\\'$m'J'$o'T\\'$m'JJJ'$o'J)  '$t'Test
                           (J'$m'JJ'$o'| \UUU)       '$t'Test
-                          (UU)'(set_color normal)
+                           (UU)'(set_color normal)
 end
 funcsave fish_greeting
