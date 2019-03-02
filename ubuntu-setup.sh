@@ -34,6 +34,7 @@ sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable
 apt install apt-transport-https
 apt update
 apt install code
+update-alternatives --set editor /usr/bin/code
 echo "[Done]"
 
 # Git
