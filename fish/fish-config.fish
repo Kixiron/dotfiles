@@ -13,7 +13,6 @@ set -g _dark_blue 6272A4
 set -g _pink FF79C6
 set -g _purple BD93F9
 set -g _cyan 8BE9FD
-set -g _light_blue 6272A4
 set -g _orange FFB86C
 set -g _green 50FA7B
 
@@ -33,7 +32,7 @@ function fish_greeting
     set o (set_color $_dark_blue)
     set m (set_color $_cyan)
     set i (set_color $_purple)
-    set t (set_color $_light_blue)
+    set t (set_color $_pink)
 
     echo '                 '$o'___
       ___======____='$m'-'$i'-'$m'-='$o')               '$t'Test'$o'
