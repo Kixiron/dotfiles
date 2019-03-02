@@ -28,216 +28,212 @@ abbr --add --global gcom git commit
 
 # Fish Greeting
 function fish_greeting
-    set outer (set_color $_dark_blue)
-    set middle (set_color $_purple)
-    set inner (set_color $_cyan)
-    set text (set_color $_pink)
     echo "                 "
-    $outer
+    set_color $_dark_blue
     echo -n "___               "
-    $text
+    set_color $_pink
     echo -n "User: $user"
-    $outer
+    set_color $_dark_blue
 
     echo "  ___======____="
-    $middle
+    set_color $_purple
     echo -n "-"
-    $inner
+    set_color $_cyan
     echo -n "-"
-    $middle
+    set_color $_purple
     echo -n "-="
-    $outer
+    set_color $_dark_blue
     echo -n ")              "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "/T            \_"
-    $inner
+    set_color $_cyan
     echo -n "--="
-    $middle
+    set_color $_purple
     echo -n "=="
-    $outer
+    set_color $_dark_blue
     echo -n ")             "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "[ \ "
-    $middle
+    set_color $_purple
     echo -n "("
-    $inner
+    set_color $_cyan
     echo -n "O"
-    $middle
+    set_color $_purple
     echo -n ")   "
-    $outer
+    set_color $_dark_blue
     echo -n "\~    \_"
-    $inner
+    set_color $_cyan
     echo -n "-="
-    $middle
+    set_color $_purple
     echo -n "="
-    $outer
+    set_color $_dark_blue
     echo -n ")             "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo " \      / )J"
-    $middle
+    set_color $_purple
     echo -n "~~    "
-    $outer
+    set_color $_dark_blue
     echo -n "\\"
-    $inner
+    set_color $_cyan
     echo -n "-="
-    $outer
+    set_color $_dark_blue
     echo -n ")             "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "  \\\\___/  )JJ"
-    $middle
+    set_color $_purple
     echo -n "~"
-    $inner
+    set_color $_cyan
     echo -n "~~   "
-    $outer
+    set_color $_dark_blue
     echo -n "\)              "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "   \_____/JJJ"
-    $middle
+    set_color $_purple
     echo -n "~~"
-    $inner
+    set_color $_cyan
     echo -n "~~    "
-    $outer
+    set_color $_dark_blue
     echo -n "\\             "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "   "
-    $middle
+    set_color $_purple
     echo -n "/ "
-    $outer
+    set_color $_dark_blue
     echo -n "\  "
-    $inner
+    set_color $_cyan
     echo -n ", \\"
-    $outer 
+    set_color $_dark_blue 
     echo -n "J"
-    $middle
+    set_color $_purple
     echo -n "~~~"
-    $inner
+    set_color $_cyan
     echo -n "~~     "
-    $middle
+    set_color $_purple
     echo -n "\\            "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "  (-"
-    $inner
+    set_color $_cyan
     echo -n "\)"
-    $outer
+    set_color $_dark_blue
     echo -n "\="
-    $middle
+    set_color $_purple
     echo -n "|"
-    $inner
+    set_color $_cyan
     echo -n "\\\\\\"
-    $middle
+    set_color $_purple
     echo -n "~~"
-    $inner
+    set_color $_cyan
     echo -n "~~       "
-    $middle
+    set_color $_purple
     echo -n "L_"
-    $inner
+    set_color $_cyan
     echo -n "_         "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "  "
-    $middle
+    set_color $_purple
     echo -n "("
-    $outer
+    set_color $_dark_blue
     echo -n "\\"
-    $middle
+    set_color $_purple
     echo -n "\\)  ("
-    $inner
+    set_color $_cyan
     echo -n "\\"
-    $middle
+    set_color $_purple
     echo -n "\\\)"
-    $outer
+    set_color $_dark_blue
     echo -n "_           "
-    $inner
+    set_color $_cyan
     echo -n "\=="
-    $middle
+    set_color $_purple
     echo -n "__     "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "   "
-    $outer
+    set_color $_dark_blue
     echo -n "\V    "
-    $middle 
+    set_color $_purple 
     echo -n "\\\\"
-    $outer
+    set_color $_dark_blue
     echo -n "\) =="
-    $middle
+    set_color $_purple
     echo -n "=_____   "
-    $inner
+    set_color $_cyan
     echo -n "\\\\\\\\"
-    $middle
+    set_color $_purple
     echo -n "\\\\    "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "          "
-    $outer
+    set_color $_dark_blue
     echo -n "\V)     \_) "
-    $middle
+    set_color $_purple
     echo -n "\\\\"
-    $inner
+    set_color $_cyan
     echo -n "\\\\JJ\\"
-    $middle
+    set_color $_purple
     echo -n "J\)   "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "                      "
-    $outer
+    set_color $_dark_blue
     echo -n "/"
-    $middle
+    set_color $_purple
     echo -n "J"
-    $inner
+    set_color $_cyan
     echo -n "\\"
-    $middle
+    set_color $_purple
     echo -n "J"
-    $outer
+    set_color $_dark_blue
     echo -n "T\\"
-    $middle
+    set_color $_purple
     echo -n "JJJ"
-    $outer
+    set_color $_dark_blue
     echo -n "J)  "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "                      (J"
-    $middle
+    set_color $_purple
     echo -n "JJ"
-    $outer
+    set_color $_dark_blue
     echo -n "| \UUU)  "
-    $text
+    set_color $_pink
     echo -n "Test"
-    $outer
+    set_color $_dark_blue
 
     echo "                       (UU)        "
-    $text
+    set_color $_pink
     echo -n "Test"
 end
 funcsave fish_greeting
