@@ -78,14 +78,22 @@ echo "[Installing Typescript]"
 npm install -g typescript
 echo "[Done]"
 
-# Behavior
-echo "[Configuring Behavior]"
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-echo "[Done]"
-
 # Configure fish
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-setup.fish | fish
+
+# Kubuntu
+echo "[Installing Kubuntu]"
+add-apt-repository ppa:kubuntu-ppa/backports
+apt update
+apt upgrade
+apt install kubuntu-desktop
+echo "[Done]"
+
+# Plasma Themes
+echo "[Installing ARC]"
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+echo "[Remember to install Chill SDDM https://github.com/MarianArlt/kde-plasma-chili]"
+echo "[Done]"
 
 # Finish
 echo "[Finishing]"
