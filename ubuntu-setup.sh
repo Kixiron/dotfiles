@@ -79,7 +79,7 @@ npm install -g typescript
 echo "[Done]"
 
 # Configure fish
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish-setup.fish | fish
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.fish | fish
 
 # Kubuntu
 echo "[Installing Kubuntu]"
