@@ -37,7 +37,8 @@ function fish_greeting
     set os ((head -n1 /etc/issue) (uname -m))
     set resolution ((xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f1) "x" (xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f2))
     set uptime (uptime | awk -F'( |,|:)+' '{ print $6, $7",", $8, "hours,", ($12 - int($12) > 0) ? int($12) + 1 : int($12) ,"minutes." }')
-    set cpu (awk -F':' '/^model name/ { print $2 }' /proc/cpuinfo)
+    set cpu (lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{ $1=$1 } 1')
+    set threads (nproc)
     set total_mem (free | awk '/^Mem:/ { print int($2 / 1000000) }')
 
     echo '                 '$o'___
@@ -48,7 +49,7 @@ function fish_greeting
       \\\\___/  )JJ'$m'~'$i'~~   '$o'\)               '$t'Memory: '$total_mem $o'
        \_____/JJJ'$m'~~'$i'~~    '$o'\\              '$t'Resolution: '$resolution $o'
        '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\             '$t'CPU: '$cpu $o'
-      (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_          '$t'Test'$o'
+      (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_          '$t'Threads: '$threads $o'
       '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__      '$t'Test'$o'
        '$o'\V    '$m'\\\\'$o'\) =='$m'=_____   '$i'\\\\\\\\'$m'\\\\     '$t'Test'$o'
               '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)    '$t'Test'$o'
