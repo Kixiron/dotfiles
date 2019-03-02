@@ -35,8 +35,8 @@ function fish_greeting
     set t (set_color $color_pink)
 
     set os_suffix "\n \l "
-    set os (head -n1 /etc/issue | sed -e "s/^$os_suffix//") (uname -m)
-    set resolution (xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f1) "x" (xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f2)
+    set os ((head -n1 /etc/issue | sed -e "s/^$os_suffix//") (uname -m))
+    set resolution ((xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f1) "x" (xrandr --current | grep '*' | uniq | awk '{ print $1 }' | cut -d 'x' -f2))
     set uptime (uptime | awk -F'( |,|:)+' '{ print $6, $7",", $8, "hours,", $9 ,"minutes." }')
     set cpu (awk -F':' '/^model name/ { print $2 }' /proc/cpuinfo)
     set total_mem (free | awk '/^Mem:/ { print int($2 / 1000000) }')
