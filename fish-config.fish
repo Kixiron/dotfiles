@@ -32,20 +32,20 @@ function fish_greeting
     set middle (set_color $_purple)
     set inner (set_color $_cyan)
     set text (set_color $_pink)
-    echo "                 " $outer "___               " $text "User: $user" $outer \
-    "  ___======____=" $middle "-" $inner "-" $middle "-=" $outer ")              " $text "Test" $outer \
-    "/T            \_" $inner "--=" $middle "==" $outer ")             " $text "Test" $outer \
-    "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Test" $outer \
-    " \      / )J" $middle "~~    " $outer "\\" $inner "-=" $outer ")             " $text "Test" $outer \
+    echo "                 " $outer "___               " $text "User: $user" $outer
+    "  ___======____=" $middle "-" $inner "-" $middle "-=" $outer ")              " $text "Test" $outer
+    "/T            \_" $inner "--=" $middle "==" $outer ")             " $text "Test" $outer
+    "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Test" $outer
+    " \      / )J" $middle "~~    " $outer "\\" $inner "-=" $outer ")             " $text "Test" $outer
     "  \\\\___/  )JJ" $middle "~" $inner "~~   " $outer "\)              " $text "Test" $outer
-    "   \_____/JJJ" $middle "~~" $inner "~~    " $outer "\\             " $text "Test" $outer \
-    "   " $middle "/ " $outer "\  " $inner ", \\" $outer "J" $middle "~~~" $inner "~~     " $middle "\\            " $text "Test" $outer \
-    "  (-" $inner "\)" $outer "\=" $middle "|" $inner "\\\\\\" $middle "~~" $inner "~~       " $middle "L_" $inner "_         " $text "Test" $outer \
-    "  " $middle "(" $outer "\\" $middle "\\)  (" $inner "\\" $middle "\\\)" $outer "_           " $inner "\==" $middle "__     " $text "Test" $outer \
-    "   " $outer "\V    " $middle "\\\\" $outer "\) ==" $middle "=_____   " $inner "\\\\\\\\" $middle "\\\\    " $text "Test" $outer \
-    "          " $outer "\V)     \_) " $middle "\\\\" $inner "\\\\JJ\\" $middle "J\)   " $text "Test" $outer \
-    "                      " $outer "/" $middle "J" $inner "\\" $middle "J" $outer "T\\" $middle "JJJ" $outer "J)  " $text "Test" $outer \
-    "                      (J" $middle "JJ" $outer "| \UUU)  " $text "Test" $outer \
+    "   \_____/JJJ" $middle "~~" $inner "~~    " $outer "\\             " $text "Test" $outer
+    "   " $middle "/ " $outer "\  " $inner ", \\" $outer "J" $middle "~~~" $inner "~~     " $middle "\\            " $text "Test" $outer
+    "  (-" $inner "\)" $outer "\=" $middle "|" $inner "\\\\\\" $middle "~~" $inner "~~       " $middle "L_" $inner "_         " $text "Test" $outer
+    "  " $middle "(" $outer "\\" $middle "\\)  (" $inner "\\" $middle "\\\)" $outer "_           " $inner "\==" $middle "__     " $text "Test" $outer
+    "   " $outer "\V    " $middle "\\\\" $outer "\) ==" $middle "=_____   " $inner "\\\\\\\\" $middle "\\\\    " $text "Test" $outer
+    "          " $outer "\V)     \_) " $middle "\\\\" $inner "\\\\JJ\\" $middle "J\)   " $text "Test" $outer
+    "                      " $outer "/" $middle "J" $inner "\\" $middle "J" $outer "T\\" $middle "JJJ" $outer "J)  " $text "Test" $outer
+    "                      (J" $middle "JJ" $outer "| \UUU)  " $text "Test" $outer
     "                       (UU)        " $text "Test"
 end
 funcsave fish_greeting
