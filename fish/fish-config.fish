@@ -32,20 +32,212 @@ function fish_greeting
     set middle (set_color $_purple)
     set inner (set_color $_cyan)
     set text (set_color $_pink)
-    echo "                 " $outer "___               " $text "User: $user" $outer
-    "  ___======____=" $middle "-" $inner "-" $middle "-=" $outer ")              " $text "Test" $outer
-    "/T            \_" $inner "--=" $middle "==" $outer ")             " $text "Test" $outer
-    "[ \ " $middle "(" $inner "O" $middle ")   " $outer "\~    \_" $inner "-=" $middle "=" $outer ")             " $text "Test" $outer
-    " \      / )J" $middle "~~    " $outer "\\" $inner "-=" $outer ")             " $text "Test" $outer
-    "  \\\\___/  )JJ" $middle "~" $inner "~~   " $outer "\)              " $text "Test" $outer
-    "   \_____/JJJ" $middle "~~" $inner "~~    " $outer "\\             " $text "Test" $outer
-    "   " $middle "/ " $outer "\  " $inner ", \\" $outer "J" $middle "~~~" $inner "~~     " $middle "\\            " $text "Test" $outer
-    "  (-" $inner "\)" $outer "\=" $middle "|" $inner "\\\\\\" $middle "~~" $inner "~~       " $middle "L_" $inner "_         " $text "Test" $outer
-    "  " $middle "(" $outer "\\" $middle "\\)  (" $inner "\\" $middle "\\\)" $outer "_           " $inner "\==" $middle "__     " $text "Test" $outer
-    "   " $outer "\V    " $middle "\\\\" $outer "\) ==" $middle "=_____   " $inner "\\\\\\\\" $middle "\\\\    " $text "Test" $outer
-    "          " $outer "\V)     \_) " $middle "\\\\" $inner "\\\\JJ\\" $middle "J\)   " $text "Test" $outer
-    "                      " $outer "/" $middle "J" $inner "\\" $middle "J" $outer "T\\" $middle "JJJ" $outer "J)  " $text "Test" $outer
-    "                      (J" $middle "JJ" $outer "| \UUU)  " $text "Test" $outer
-    "                       (UU)        " $text "Test"
+    echo "                 "
+    $outer
+    echo -n "___               "
+    $text
+    echo -n "User: $user"
+    $outer
+
+    echo "  ___======____="
+    $middle
+    echo -n "-"
+    $inner
+    echo -n "-"
+    $middle
+    echo -n "-="
+    $outer
+    echo -n ")              "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "/T            \_"
+    $inner
+    echo -n "--="
+    $middle
+    echo -n "=="
+    $outer
+    echo -n ")             "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "[ \ "
+    $middle
+    echo -n "("
+    $inner
+    echo -n "O"
+    $middle
+    echo -n ")   "
+    $outer
+    echo -n "\~    \_"
+    $inner
+    echo -n "-="
+    $middle
+    echo -n "="
+    $outer
+    echo -n ")             "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo " \      / )J"
+    $middle
+    echo -n "~~    "
+    $outer
+    echo -n "\\"
+    $inner
+    echo -n "-="
+    $outer
+    echo -n ")             "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "  \\\\___/  )JJ"
+    $middle
+    echo -n "~"
+    $inner
+    echo -n "~~   "
+    $outer
+    echo -n "\)              "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "   \_____/JJJ"
+    $middle
+    echo -n "~~"
+    $inner
+    echo -n "~~    "
+    $outer
+    echo -n "\\             "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "   "
+    $middle
+    echo -n "/ "
+    $outer
+    echo -n "\  "
+    $inner
+    echo -n ", \\"
+    $outer 
+    echo -n "J"
+    $middle
+    echo -n "~~~"
+    $inner
+    echo -n "~~     "
+    $middle
+    echo -n "\\            "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "  (-"
+    $inner
+    echo -n "\)"
+    $outer
+    echo -n "\="
+    $middle
+    echo -n "|"
+    $inner
+    echo -n "\\\\\\"
+    $middle
+    echo -n "~~"
+    $inner
+    echo -n "~~       "
+    $middle
+    echo -n "L_"
+    $inner
+    echo -n "_         "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "  "
+    $middle
+    echo -n "("
+    $outer
+    echo -n "\\"
+    $middle
+    echo -n "\\)  ("
+    $inner
+    echo -n "\\"
+    $middle
+    echo -n "\\\)"
+    $outer
+    echo -n "_           "
+    $inner
+    echo -n "\=="
+    $middle
+    echo -n "__     "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "   "
+    $outer
+    echo -n "\V    "
+    $middle 
+    echo -n "\\\\"
+    $outer
+    echo -n "\) =="
+    $middle
+    echo -n "=_____   "
+    $inner
+    echo -n "\\\\\\\\"
+    $middle
+    echo -n "\\\\    "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "          "
+    $outer
+    echo -n "\V)     \_) "
+    $middle
+    echo -n "\\\\"
+    $inner
+    echo -n "\\\\JJ\\"
+    $middle
+    echo -n "J\)   "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "                      "
+    $outer
+    echo -n "/"
+    $middle
+    echo -n "J"
+    $inner
+    echo -n "\\"
+    $middle
+    echo -n "J"
+    $outer
+    echo -n "T\\"
+    $middle
+    echo -n "JJJ"
+    $outer
+    echo -n "J)  "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "                      (J"
+    $middle
+    echo -n "JJ"
+    $outer
+    echo -n "| \UUU)  "
+    $text
+    echo -n "Test"
+    $outer
+
+    echo "                       (UU)        "
+    $text
+    echo -n "Test"
 end
 funcsave fish_greeting
