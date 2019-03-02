@@ -30,24 +30,25 @@ abbr --add --global gcom git commit
 function fish_greeting
     set mouth "["
     set eye "O"
-    set o (set_color $_purple)
+    set o (set_color $_dark_blue)
     set m (set_color $_cyan)
-    set i (set_color $_dark_blue)
+    set i (set_color $_purple)
+    set t (set_color $_light_blue)
 
-    echo '                 '$o'___
-      ___======____='$m'-'$i'-'$m'-='$o')
-    /T            \_'$i'--='$m'=='$o')
-    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')
-     \      / )J'$m'~~    '$o'\\'$i'-='$o')
-      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)
-       \_____/JJJ'$m'~~'$i'~~    '$o'\\
-       '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\
-      (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_
-      '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__
+    echo '                 '$o'___              '$t'Test
+      ___======____='$m'-'$i'-'$m'-='$o')         '$t'Test
+    /T            \_'$i'--='$m'=='$o')        '$t'Test
+    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')         '$t'Test
+     \      / )J'$m'~~    '$o'\\'$i'-='$o')            '$t'Test
+      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)          '$t'Test
+       \_____/JJJ'$m'~~'$i'~~    '$o'\\          '$t'Test
+       '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\        '$t'Test
+      (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_      '$t'Test
+      '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__      '$t'Test
        '$o'\V    '$m'\\\\'$o'\) =='$m'=_____   '$i'\\\\\\\\'$m'\\\\
-              '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)
-                          '$o'/'$m'J'$i'\\'$m'J'$o'T\\'$m'JJJ'$o'J)
-                          (J'$m'JJ'$o'| \UUU)
-    (UU)'(set_color normal)
+              '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)  '$t'Test
+                          '$o'/'$m'J'$i'\\'$m'J'$o'T\\'$m'JJJ'$o'J)  '$t'Test
+                          (J'$m'JJ'$o'| \UUU)       '$t'Test
+                          (UU)'(set_color normal)
 end
 funcsave fish_greeting
