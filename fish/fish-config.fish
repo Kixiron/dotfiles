@@ -35,20 +35,20 @@ function fish_greeting
     set i (set_color $_purple)
     set t (set_color $_light_blue)
 
-    echo '                 '$o'___              '$t'Test
-      ___======____='$m'-'$i'-'$m'-='$o')         '$t'Test
-    /T            \_'$i'--='$m'=='$o')        '$t'Test
-    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')         '$t'Test
-     \      / )J'$m'~~    '$o'\\'$i'-='$o')            '$t'Test
-      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)          '$t'Test
-       \_____/JJJ'$m'~~'$i'~~    '$o'\\          '$t'Test
-       '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\        '$t'Test
-      (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_      '$t'Test
-      '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__      '$t'Test
-       '$o'\V    '$m'\\\\'$o'\) =='$m'=_____   '$i'\\\\\\\\'$m'\\\\
-              '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)  '$t'Test
+    echo '                 '$o'___                 '$t'Test
+      ___======____='$m'-'$i'-'$m'-='$o')            '$t'Test
+    /T            \_'$i'--='$m'=='$o')           '$t'Test
+    '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')            '$t'Test
+     \      / )J'$m'~~    '$o'\\'$i'-='$o')               '$t'Test
+      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)             '$t'Test
+       \_____/JJJ'$m'~~'$i'~~    '$o'\\             '$t'Test
+       '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\           '$t'Test
+      (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_         '$t'Test
+      '$m'('$o'\\'$m'\\)  ('$i'\\'$m'\\\)'$o'_           '$i'\=='$m'__     '$t'Test
+       '$o'\V    '$m'\\\\'$o'\) =='$m'=_____   '$i'\\\\\\\\'$m'\\\\     '$t'Test
+              '$o'\V)     \_) '$m'\\\\'$i'\\\\JJ\\'$m'J\)   '$t'Test
                           '$o'/'$m'J'$i'\\'$m'J'$o'T\\'$m'JJJ'$o'J)  '$t'Test
-                          (J'$m'JJ'$o'| \UUU)       '$t'Test
+                          (J'$m'JJ'$o'| \UUU)  '$t'Test
                            (UU)'(set_color normal)
 end
 funcsave fish_greeting
