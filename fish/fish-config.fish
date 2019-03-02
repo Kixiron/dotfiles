@@ -42,7 +42,7 @@ function fish_greeting
     /T            \_'$i'--='$m'=='$o')              '$t'Host: $host'$o'
     '$mouth' \ '$m'('$i$eye$m')   '$o'\~    \_'$i'-='$m'='$o')              '$t'OS: (uname) (uname -m)'$o'
      \      / )J'$m'~~    '$o'\\'$i'-='$o')              '$t'Uptime: (uptime | awk -F'( |,|:)+' '{print $6,$7",",$8,"hours,",$9,"minutes."}')'$o'
-      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)               '$t'Shell: ($SHELL | sed -e "s/^$shell_prefix//")'$o'
+      \\\\___/  )JJ'$m'~'$i'~~   '$o'\)               '$t'Test'$o'
        \_____/JJJ'$m'~~'$i'~~    '$o'\\              '$t'Resolution: ' $x_dimension 'x' $y_dimension '$o'
        '$m'/ '$o'\  '$i', \\'$o'J'$m'~~~'$i'~~     '$m'\\             '$t'Test'$o'
       (-'$i'\)'$o'\='$m'|'$i'\\\\\\'$m'~~'$i'~~       '$m'L_'$i'_          '$t'Test'$o'
