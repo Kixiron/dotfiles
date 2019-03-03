@@ -18,6 +18,7 @@ set -g color_green 50FA7B
 
 # Programming
 abbr --add --global py python3
+abbr --add --global dotnet dotnet-sdk.dotnet
 
 # Git
 abbr --add --global gpull git pull

@@ -74,6 +74,16 @@ echo "[Installing Rust]"
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh -s -y
 echo "[Done]"
 
+# GCC
+echo "[Installing GCC]"
+apt install GCC
+echo "[Done]"
+
+# .NET
+echo "[Installing .NET]"
+snap install dotnet-sdk --classic
+echo "[Done]"
+
 # Fish
 echo "[Installing Fish]"
 echo "y" | apt install fish
