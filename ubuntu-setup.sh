@@ -39,7 +39,7 @@ echo "[Done]"
 # Neofetch
 echo "[Installing Neofetch]"
 echo "y" | apt install neofetch
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/neofetch/config.conf > "$HOME/.config/neofetch/config.conf"
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/neofetch/neofetch.conf > "$HOME/.config/neofetch/config.conf"
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/neofetch/fish_ascii > "$HOME/.config/neofetch/fish_ascii"
 echo "[Done]"
 
@@ -117,7 +117,7 @@ echo "[Done]"
 # Clean cache
 echo "[Installing Cleaning]"
 apt clean
-apt autoremove
+echo "y" | apt autoremove
 echo "[Done]"
 
 echo "[Finished Setting Up]"
