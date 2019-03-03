@@ -1,5 +1,6 @@
-# Fish Greeting
+# ~/.config/fish/functions/fish_greeting.fish
 
+# Fish Greeting
 function fish_greeting
     set mouth "["
     set eye "O"
