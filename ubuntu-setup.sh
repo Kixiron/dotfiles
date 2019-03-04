@@ -26,6 +26,12 @@ echo "[Installing Snap]"
 echo "y" | apt install snapd
 echo "[Done]"
 
+# Kubuntu
+echo "[Installing Kubuntu]"
+add-apt-repository ppa:kubuntu-ppa/backports
+echo "y" | apt install kubuntu-desktop
+echo "[Done]"
+
 # Visual Studio Code
 echo "[Installing Visual Studio Code]"
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -71,7 +77,14 @@ echo "[Done]"
 
 # Rust/Cargo
 echo "[Installing Rust]"
-curl -sf -L https://static.rust-lang.org/rustup.sh | sh -s -y
+curl -sf -L https://static.rust-lang.org/rustup.sh | sh - -y
+rustup update
+rustup self update
+cargo update
+rustup toolchain add nightly # Add nightly toolchain
+rustup component add clippy # Add clippy
+rustup component add rustfmt # Add rustfmt
+cargo +nightly install racer # Add racer
 echo "[Done]"
 
 # GCC
@@ -103,12 +116,6 @@ echo "[Done]"
 
 # Configure fish
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.fish | fish
-
-# Kubuntu
-echo "[Installing Kubuntu]"
-add-apt-repository ppa:kubuntu-ppa/backports
-echo "y" | apt install kubuntu-desktop
-echo "[Done]"
 
 # Plasma Themes
 echo "[Installing ARC]"
