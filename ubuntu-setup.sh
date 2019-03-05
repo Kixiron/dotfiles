@@ -71,6 +71,7 @@ echo "[Done]"
 # Rust/Cargo
 echo "[Installing Rust]"
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh -s -- -y # Run with defaults
+source $HOME/.cargo/env # Path
 rustup update
 rustup self update
 cargo update
