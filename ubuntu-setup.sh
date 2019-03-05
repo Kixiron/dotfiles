@@ -42,13 +42,6 @@ echo "y" | apt install code
 update-alternatives --set editor /usr/bin/code
 echo "[Done]"
 
-# Neofetch
-echo "[Installing Neofetch]"
-echo "y" | apt install neofetch
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/neofetch/neofetch.conf > "$HOME/.config/neofetch/config.conf"
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/neofetch/fish_ascii > "$HOME/.config/neofetch/fish_ascii"
-echo "[Done]"
-
 # Git
 echo "[Installing Git]"
 echo "y" | apt install git-all
@@ -77,7 +70,7 @@ echo "[Done]"
 
 # Rust/Cargo
 echo "[Installing Rust]"
-curl -sf -L https://static.rust-lang.org/rustup.sh | sh - -y
+curl -sf -L https://static.rust-lang.org/rustup.sh | sh -s -- -y # Run with defaults
 rustup update
 rustup self update
 cargo update
