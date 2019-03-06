@@ -94,7 +94,7 @@ echo "[Done]"
 # Fish
 echo "[Installing Fish]"
 echo "y" | apt install fish
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
+echo /usr/local/bin/fish | tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 echo "[Done]"
 
