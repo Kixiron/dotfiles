@@ -115,7 +115,7 @@ curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.f
 
 # Plasma Themes
 echo "[Installing ARC]"
-wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+curl https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 echo "[Remember to install Chill SDDM https://github.com/MarianArlt/kde-plasma-chili]"
 echo "[Done]"
 
