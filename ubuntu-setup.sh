@@ -75,10 +75,13 @@ source $HOME/.cargo/env # Path
 rustup update
 rustup self update
 cargo update
-rustup toolchain add nightly # Add nightly toolchain
-rustup component add clippy # Add clippy
-rustup component add rustfmt # Add rustfmt
-cargo +nightly install racer # Add racer
+rustup toolchain add nightly                     # Add nightly toolchain
+rustup component add clippy                      # Add clippy
+rustup component add clippy --toolchain nightly  # Add clippy nightly
+rustup component add rustfmt                     # Add rustfmt
+rustup component add rustfmt --toolchain nightly # Add rustfmt nightly
+rustup component add rls                         # Add rust language server
+cargo install racer                              # Add racer
 echo "[Done]"
 
 # GCC
