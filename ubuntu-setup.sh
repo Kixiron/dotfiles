@@ -84,7 +84,20 @@ rustup component add rls                         # Add rust language server
 rustup component add rust-src                    # Add rust-src
 cargo install racer                              # Add racer
 cargo install cargo-xbuild                       # Add xbuild
+cargo install cargo-kcov                         # Add kcov
+cargo install cargo-bloat                        # Add bloat
+cargo install cargo-asm                          # Add asm
+cargo install cargo-audit                        # Add audit
+cargo install cargo-cache                        # Add cache
+cargo install cargo-check                        # Add check
+cargo install cargo-clone                        # Add clone
+cargo install cargo-count                        # Add count
+cargo install cargo-deps                         # Add dependencies
+cargo install cargo-expand                       # Add expand
+cargo install cargo-license                      # Add license
 cargo install cargo-generate                     # Add cargo-generate
+cargo install cargo-modules                      # Add modules
+cargo install cargo-watch                        # Add watch
 cargo install bootimage                          # Add bootimage
 echo "[Done]"
 
