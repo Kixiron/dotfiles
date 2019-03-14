@@ -99,6 +99,7 @@ cargo install cargo-generate                     # Add cargo-generate
 cargo install cargo-modules                      # Add modules
 cargo install cargo-watch                        # Add watch
 cargo install bootimage                          # Add bootimage
+cargo --list                                     # List installed extensions
 echo "[Done]"
 
 # GCC
