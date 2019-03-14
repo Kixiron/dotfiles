@@ -81,7 +81,11 @@ rustup component add clippy --toolchain nightly  # Add clippy nightly
 rustup component add rustfmt                     # Add rustfmt
 rustup component add rustfmt --toolchain nightly # Add rustfmt nightly
 rustup component add rls                         # Add rust language server
+rustup component add rust-src                    # Add rust-src
 cargo install racer                              # Add racer
+cargo install cargo-xbuild                       # Add xbuild
+cargo install cargo-generate                     # Add cargo-generate
+cargo install bootimage                          # Add bootimage
 echo "[Done]"
 
 # GCC
