@@ -75,6 +75,7 @@ source $HOME/.cargo/env # Path
 rustup update
 rustup self update
 cargo update
+rustup toolchain add beat                        # Add beta toolchain
 rustup toolchain add nightly                     # Add nightly toolchain
 rustup component add clippy                      # Add clippy
 rustup component add clippy --toolchain nightly  # Add clippy nightly
@@ -98,8 +99,13 @@ cargo install cargo-license                      # Add license
 cargo install cargo-generate                     # Add cargo-generate
 cargo install cargo-modules                      # Add modules
 cargo install cargo-watch                        # Add watch
-cargo install bootimage                          # Add bootimage
+cargo install bootimage --version "^0.5.0"       # Add bootimage
 cargo --list                                     # List installed extensions
+echo "[Done]"
+
+# QEMU
+echo "[Installing QEMU]"
+echo "y" | apt-get install qemu
 echo "[Done]"
 
 # GCC
