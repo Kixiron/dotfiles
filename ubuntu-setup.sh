@@ -85,6 +85,7 @@ rustup component add rls                         # Add rust language server
 rustup component add rust-src                    # Add rust-src
 cargo install racer                              # Add racer
 cargo install cargo-xbuild                       # Add xbuild
+cargo install xargo                              # Add xargo
 cargo install cargo-kcov                         # Add kcov
 cargo install cargo-bloat                        # Add bloat
 cargo install cargo-asm                          # Add asm
