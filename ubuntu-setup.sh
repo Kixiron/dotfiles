@@ -75,6 +75,7 @@ source $HOME/.cargo/env # Path
 rustup update
 rustup self update
 cargo update
+source $HOME/.cargo/env # Path
 rustup toolchain add beat                        # Add beta toolchain
 rustup toolchain add nightly                     # Add nightly toolchain
 rustup component add clippy                      # Add clippy
