@@ -152,10 +152,14 @@ kde_files=(
     'https://dl.opendesktop.org/api/files/download/id/1552685752/s/51367f37e0fcd0e4d1a2d010372af5bd62665ec191a7ca17967d2c7c226b5c61703f16ac74a820ecbebb169c13f8849e7ef08623c46a8d58fbe80838fafcd74b/t/1556144818/u//Harmony.tar.gz'
     'https://dl.opendesktop.org/api/files/download/id/1555583188/s/ea8f1de09e066db9a4fb79b01a246aa35aedd3864f0c92363a9fc49b8f0dba870ab7bd0da0c26ed0f3fd84439273660b0c05438ae7c95397ab11b60dccfb0578/t/1556144839/u//harmony-v.3.tar.gz'
 )
+cd ~/.kde/share/apps/desktoptheme
 for kde_file in "${kde_files[@]}"; do
-    current_kde=curl $kde_file
-    tar -xf $current_kde -C /tmp
+    curl $kde_file > ./
 done
+for kde_file in ./; do
+    plasmapkg -i $kde_file
+done
+cd /
 echo "[Done]"
 
 # Finish
