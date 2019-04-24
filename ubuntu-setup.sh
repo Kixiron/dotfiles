@@ -9,21 +9,21 @@ echo "[Done]"
 
 # Setup
 echo "[Setting up]"
-echo "y" | apt install software-properties-common apt-transport-https wget
-echo "y" | apt install apt-transport-https ca-certificates curl software-properties-common
+yes | apt install software-properties-common apt-transport-https wget
+yes | apt install apt-transport-https ca-certificates curl software-properties-common
 echo "[Done]"
 
 # Make Tools
 echo "[Installing Make Tools]"
-echo "y" | apt install make
-echo "y" | apt install automake
-echo "y" | apt install pkg-config
-echo "y" | apt install autoconf
+yes | apt install make
+yes | apt install automake
+yes | apt install pkg-config
+yes | apt install autoconf
 echo "[Done]"
 
 # Snap
 echo "[Installing Snap]"
-echo "y" | apt install snapd
+yes | apt install snapd
 echo "[Done]"
 echo "[Installing Snap Packages]"
 snap install code --classic
@@ -32,28 +32,38 @@ snap install docker
 snap install spotify
 snap install krita
 snap install kubectl --classic
-# Run redis inside of docker container https://hub.docker.com/_/redis/
 snap install redis-desktop-manager
 snap install obs-studio
 snap install electronplayer
 snap install lepton
 echo "[Done]"
 
-# Docker Containers
-echo "[Starting Docker Containers]"
-# docker run --name cheat.sh -d [IMAGE: https://raw.githubusercontent.com/chubin/cheat.sh/master/Dockerfile]
-docker run -it --name redis --rm redis redis-cli --appendonly yes
+# Docker Compose
+echo "[Installing Docker Compose]"
+curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+echo "[Done]"
+
+# Cheat.sh
+echo "[Installing Cheat.sh]"
+git clone https://github.com/chubin/cheat.sh.git /usr/cheat.sh
+cd /usr/cheat.sh
+docker-compose up
+cd /
+mkdir -p ~/bin/
+curl https://cht.sh/:cht.sh > ~/bin/cht.sh
+chmod +x ~/bin/cht.sh
 echo "[Done]"
 
 # Kubuntu
 echo "[Installing Kubuntu]"
 add-apt-repository ppa:kubuntu-ppa/backports
-echo "y" | apt install kubuntu-desktop
+yes | apt install kubuntu-desktop
 echo "[Done]"
 
 # Git
 echo "[Installing Git]"
-echo "y" | apt install git-all
+yes | apt install git-all
 echo "[Done]"
 
 # Audacity
@@ -100,7 +110,7 @@ cargo install cargo-multi
 echo "[Done]"
 
 echo "[Setting up cron]"
-curl CRON_SETUP | sh
+curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/cron/setup.sh | sh
 echo "[Done]"
 
 # GCC
@@ -110,7 +120,7 @@ echo "[Done]"
 
 # Fish
 echo "[Installing Fish]"
-echo "y" | apt install fish
+yes | apt install fish
 echo /usr/local/bin/fish | tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 PATH=$PATH:~/usr/local/bin/fish
@@ -159,7 +169,7 @@ echo "[Done]"
 # Clean cache
 echo "[Installing Cleaning]"
 apt clean
-echo "y" | apt autoremove
+yes | apt autoremove
 echo "[Done]"
 
 echo "[Finished Setting Up]"
