@@ -2,9 +2,9 @@
 
 # Update
 echo "[Updating and Upgrading]"
-apt update
-apt upgrade
-apt dist-upgrade
+yes | apt update
+yes | apt upgrade
+yes | apt dist-upgrade
 echo "[Done]"
 
 # Setup
@@ -41,7 +41,7 @@ echo "[Done]"
 # Docker Compose
 echo "[Installing Docker Compose]"
 curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+yes | chmod +x /usr/local/bin/docker-compose
 echo "[Done]"
 
 # Cheat.sh
@@ -52,12 +52,12 @@ docker-compose up
 cd /
 mkdir -p ~/bin/
 curl https://cht.sh/:cht.sh > ~/bin/cht.sh
-chmod +x ~/bin/cht.sh
+yes | chmod +x ~/bin/cht.sh
 echo "[Done]"
 
 # Kubuntu
 echo "[Installing Kubuntu]"
-add-apt-repository ppa:kubuntu-ppa/backports
+yes | add-apt-repository ppa:kubuntu-ppa/backports
 yes | apt install kubuntu-desktop
 echo "[Done]"
 
@@ -68,8 +68,8 @@ echo "[Done]"
 
 # Audacity
 echo "[Installing Audacity]"
-add-apt-repository ppa:ubuntuhandbook1/audacity
-get install audacity
+yes | add-apt-repository ppa:ubuntuhandbook1/audacity
+yes | get install audacity
 echo "[Done]"
 
 # Rust/Cargo
@@ -105,8 +105,8 @@ cargo install cargo-generate                     # Add cargo-generate
 cargo install cargo-modules                      # Add modules
 cargo install cargo-watch                        # Add watch
 cargo install cargo-web                          # Add client-side web
+cargo install cargo-multi                        # Add multi command
 cargo --list                                     # List installed extensions
-cargo install cargo-multi
 echo "[Done]"
 
 echo "[Setting up cron]"
@@ -115,14 +115,14 @@ echo "[Done]"
 
 # GCC
 echo "[Installing GCC]"
-apt install GCC
+yes | apt install GCC
 echo "[Done]"
 
 # Fish
 echo "[Installing Fish]"
 yes | apt install fish
 echo /usr/local/bin/fish | tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+yes | chsh -s /usr/local/bin/fish
 PATH=$PATH:~/usr/local/bin/fish
 echo "[Done]"
 
@@ -161,14 +161,14 @@ echo "[Done]"
 # Finish
 echo "[Finishing]"
 snap refresh
-apt update
-apt upgrade
-apt dist-upgrade
+yes | apt update
+yes | apt upgrade
+yes | apt dist-upgrade
 echo "[Done]"
 
 # Clean cache
 echo "[Installing Cleaning]"
-apt clean
+yes | apt clean
 yes | apt autoremove
 echo "[Done]"
 
