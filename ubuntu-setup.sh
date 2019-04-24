@@ -25,6 +25,25 @@ echo "[Done]"
 echo "[Installing Snap]"
 echo "y" | apt install snapd
 echo "[Done]"
+echo "[Installing Snap Packages]"
+snap install code --classic
+snap install discord
+snap install docker
+snap install spotify
+snap install krita
+snap install kubectl --classic
+# Run redis inside of docker container https://hub.docker.com/_/redis/
+snap install redis-desktop-manager
+snap install obs-studio
+snap install electronplayer
+snap install lepton
+echo "[Done]"
+
+# Docker Containers
+echo "[Starting Docker Containers]"
+# docker run --name cheat.sh -d [IMAGE: https://raw.githubusercontent.com/chubin/cheat.sh/master/Dockerfile]
+docker run -it --name redis --rm redis redis-cli --appendonly yes
+echo "[Done]"
 
 # Kubuntu
 echo "[Installing Kubuntu]"
@@ -32,24 +51,9 @@ add-apt-repository ppa:kubuntu-ppa/backports
 echo "y" | apt install kubuntu-desktop
 echo "[Done]"
 
-# Visual Studio Code
-echo "[Installing Visual Studio Code]"
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-echo "y" | apt install apt-transport-https
-echo "y" | apt install code
-update-alternatives --set editor /usr/bin/code
-echo "[Done]"
-
 # Git
 echo "[Installing Git]"
 echo "y" | apt install git-all
-echo "[Done]"
-
-# Discord
-echo "[Installing Discord]"
-snap install discord
 echo "[Done]"
 
 # Audacity
@@ -58,24 +62,13 @@ add-apt-repository ppa:ubuntuhandbook1/audacity
 get install audacity
 echo "[Done]"
 
-# Docker
-echo "[Installing Docker]"
-snap install docker
-echo "[Done]"
-
-# Spotify
-echo "[Installing Spotify]"
-snap install spotify
-echo "[Done]"
-
 # Rust/Cargo
 echo "[Installing Rust]"
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh -s -- -y # Run with defaults
-source $HOME/.cargo/env # Path
+PATH=$PATH:~/.cargo/env
 rustup update
 rustup self update
 cargo update
-source $HOME/.cargo/env # Path
 rustup toolchain add beat                        # Add beta toolchain
 rustup toolchain add nightly                     # Add nightly toolchain
 rustup component add clippy                      # Add clippy
@@ -101,13 +94,13 @@ cargo install cargo-license                      # Add license
 cargo install cargo-generate                     # Add cargo-generate
 cargo install cargo-modules                      # Add modules
 cargo install cargo-watch                        # Add watch
-cargo install bootimage --version "^0.5.0"       # Add bootimage
+cargo install cargo-web                          # Add client-side web
 cargo --list                                     # List installed extensions
+cargo install cargo-multi
 echo "[Done]"
 
-# QEMU
-echo "[Installing QEMU]"
-echo "y" | apt-get install qemu
+echo "[Setting up cron]"
+curl CRON_SETUP | sh
 echo "[Done]"
 
 # GCC
@@ -115,37 +108,44 @@ echo "[Installing GCC]"
 apt install GCC
 echo "[Done]"
 
-# .NET
-echo "[Installing .NET]"
-snap install dotnet-sdk --classic
-echo "[Done]"
-
 # Fish
 echo "[Installing Fish]"
 echo "y" | apt install fish
 echo /usr/local/bin/fish | tee -a /etc/shells
 chsh -s /usr/local/bin/fish
-echo "[Done]"
-
-# NPM
-echo "[Installing NPM]"
-echo "y" | apt install curl software-properties-common
-curl -sL https://deb.nodesource.com/setup_11.x | -E bash -
-echo "y" | apt install nodejs
-echo "[Done]"
-
-# Typescript
-echo "[Installing Typescript]"
-npm install -g typescript
+PATH=$PATH:~/usr/local/bin/fish
 echo "[Done]"
 
 # Configure fish
 curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.fish | fish
 
 # Plasma Themes
-echo "[Installing ARC]"
-curl https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
-echo "[Remember to install Chill SDDM https://github.com/MarianArlt/kde-plasma-chili]"
+echo "[Installing Plasma Themes]"
+# Themeset:
+# https://store.kde.org/p/1300357/
+# https://www.opendesktop.org/p/1284743/
+# https://store.kde.org/p/1284745/
+# https://store.kde.org/p/1296021/
+# https://store.kde.org/p/1284748/
+# https://store.kde.org/p/1285298/
+# https://www.opendesktop.org/p/1287872/
+# https://store.kde.org/p/1294604/
+# https://store.kde.org/p/1012430/
+kde_files=(
+    'https://dl.opendesktop.org/api/files/download/id/1555144062/s/c34a70e446e5010313aeb4a6d8c7b467812b37f9892586cb7518908977b5312e4cdc76945b5218a823acbe9450476cd1780031a8cedc7cc10ad7c09fec66ebb7/t/1556144007/u//Flat-Remix-Blue_1.89.tar.xz'
+    'https://dl.opendesktop.org/api/files/download/id/1552552531/s/954ce4926781f02bd46a0399e69935d3dd9eeb5ec55280b9f150f4ca4470d6295e2fa6b6f8f7f85e2250e4f0ba048dea4f658a09bc3cffcfa0fdbb4e5a57f41e/t/1556144579/u//forceblur.kwinscript'
+    'https://dl.opendesktop.org/api/files/download/id/1549017406/s/21e3f1b5f3e4409a46177a94ef248b17251d5e38d43b44dd30ae0ded5f27a741c8ec844deaa0ee5d3f15acc433c081ab98dbd3e4b0aaab0e168412b1c82df352/t/1556144707/u//Harmony.tar.gz'
+    'https://dl.opendesktop.org/api/files/download/id/1547556832/s/6a63d188f7e7e7feb90e35806b2bf9d2a2b744ceed16bc18419118be8e088ba8943518476bd6bbb8639f19057d74883bb814569a83bd293fb343d9fdc909ad42/t/1556144733/u//Harmony.colorscheme'
+    'https://dl.opendesktop.org/api/files/download/id/1555163845/s/1aa223cd49f46d94e94dd9ee0c59af340dd21aa5988e0359e4b7ed4747fc629f74cfaca205e25df9dddc393908601f8cb349e70c4230ccffd47964067805279d/t/1556144756/u//harmony.tar.gz'
+    'https://dl.opendesktop.org/api/files/download/id/1553244754/s/6f945eda1f9ec91d6ed3cf0dee0b4f920ec64667b164e44c940185c7e9e39eb32d5404444474553611dec6652393d64a82753be1ef57e7d030f3c3d13a8cbf5d/t/1556144773/u//Harmony.tar.gz'
+    'https://dl.opendesktop.org/api/files/download/id/1547241436/s/42abf2c88c7f8428846639d90765fd559c17f4ad62834e2c4e9314d78c5b16dc605f32450b89dd30945b496005faee8b31645053814f2611c39cb8d49e72a3b8/t/1556144795/u//HarmonyDark.colors'
+    'https://dl.opendesktop.org/api/files/download/id/1552685752/s/51367f37e0fcd0e4d1a2d010372af5bd62665ec191a7ca17967d2c7c226b5c61703f16ac74a820ecbebb169c13f8849e7ef08623c46a8d58fbe80838fafcd74b/t/1556144818/u//Harmony.tar.gz'
+    'https://dl.opendesktop.org/api/files/download/id/1555583188/s/ea8f1de09e066db9a4fb79b01a246aa35aedd3864f0c92363a9fc49b8f0dba870ab7bd0da0c26ed0f3fd84439273660b0c05438ae7c95397ab11b60dccfb0578/t/1556144839/u//harmony-v.3.tar.gz'
+)
+for kde_file in "${kde_files[@]}"; do
+    current_kde=curl $kde_file
+    tar -xf $current_kde -C /tmp
+done
 echo "[Done]"
 
 # Finish
