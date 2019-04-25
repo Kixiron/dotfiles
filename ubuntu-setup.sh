@@ -46,13 +46,22 @@ echo "[Done]"
 
 # Cheat.sh
 echo "[Installing Cheat.sh]"
-git clone https://github.com/chubin/cheat.sh.git /usr/cheat.sh
+git clone https://github.com/chubin/cheat.sh.git /usr/local/cheat.sh
 cd /usr/cheat.sh
 docker-compose up
 cd /
 mkdir -p ~/bin/
 curl https://cht.sh/:cht.sh > ~/bin/cht.sh
 yes | chmod +x ~/bin/cht.sh
+echo "[Done]"
+
+# Docker
+echo "[Starting Docker Containers]"
+cd /usr/local/kugelblitz
+git clone https://github.com/Kixiron/kugelblitz.git ./
+docker build . --tag kugelblitz --rm=false
+docker run -d --name Kugelblitz --rm=false kugelblitz
+cd /
 echo "[Done]"
 
 # Kubuntu
@@ -110,7 +119,7 @@ cargo --list                                     # List installed extensions
 echo "[Done]"
 
 echo "[Setting up cron]"
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/cron/setup.sh | sh
+sh $(curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/cron/setup.sh)
 echo "[Done]"
 
 # GCC
@@ -127,7 +136,7 @@ PATH=$PATH:~/usr/local/bin/fish
 echo "[Done]"
 
 # Configure fish
-curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.fish | fish
+fish $(curl https://raw.githubusercontent.com/Kixiron/dotfiles/master/fish/fish-setup.fish)
 
 # Plasma Themes
 echo "[Installing Plasma Themes]"
