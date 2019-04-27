@@ -11,6 +11,8 @@ echo "[Done]"
 echo "[Setting up]"
 yes | apt install software-properties-common apt-transport-https wget
 yes | apt install apt-transport-https ca-certificates curl software-properties-common
+apt install curl
+apt install grep
 mkdir /usr/code
 echo "[Done]"
 
