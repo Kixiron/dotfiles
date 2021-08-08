@@ -1,0 +1,52 @@
+[buildPlans.iosevka-custom]
+family = "Iosevka Custom"
+no-cv-ss = true
+serifs = "sans"
+spacing = "normal"
+
+        [buildPlans.iosevka-custom.variants]
+        inherits = "ss14"
+
+            [buildPlans.iosevka-custom.variants.design]
+            a              = "double-storey-serifed"
+            ampersand      = "closed"
+            capital-a      = "straight-top-serifed"
+            capital-b      = "standard-bilateral-serifed"
+            capital-c      = "unilateral-serifed"
+            capital-d      = "standard-bilateral-serifed"
+            capital-e      = "serifed"
+            capital-f      = "top-left-serifed"
+            capital-gamma  = "top-right-serifed"
+            cyrl-capital-u = "straight-turn"
+            cyrl-ef        = "top-serifed"
+            eszet          = "sulzbacher-descending"
+            lower-alpha    = "crossing"
+            lower-lambda   = "straight-turn"
+            paragraph-sign = "high"
+
+        [buildPlans.iosevka-custom.ligations]
+        enables = [
+            "arrow",
+            "arrow2",
+            "brace-bar",
+            "brack-bar",
+            "brst",
+            "connected-hyphen-as-semi-dashed-line",
+            "connected-number-sign",
+            "connected-tilde-as-wave",
+            "connected-underscore",
+            "dot-as-operator",
+            "eqeq",
+            "eqeqeq",
+            "exeq",
+            "exeqeq",
+            "html-comment",
+            "ineq",
+            "kern-dotty",
+            "llgg",
+            "logic",
+            "ltgt-diamond",
+            "plusplus",
+            "trig",
+        ]
+        inherits = "haskell"
