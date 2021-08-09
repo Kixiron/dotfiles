@@ -222,7 +222,7 @@ Set-Alias -Name cls -Value Clear-Host -Force | Out-Null
 Set-Alias -Name grep -Value rg -PassThru | Out-Null
 Set-Alias -Name ls -Value lsd -Force -PassThru | Out-Null
 Set-Alias -Name nano -Value C:\Progra~1\Git\usr\bin\nano.exe -PassThru -Force | Out-Null
-Set-Alias -Name which -Value C:\Progra~1\Git\usr\bin\which.exe -PassThru -Force | Out-Null
+Set-Alias -Name which -Value Get-Command -PassThru -Force | Out-Null
 
 # ------------------------------------ Completions ------------------------------------
 
