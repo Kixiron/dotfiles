@@ -1,7 +1,7 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-$script:StartTime = [System.Diagnostics.Stopwatch]::StartNew()
+# $script:StartTime = [System.Diagnostics.Stopwatch]::StartNew()
 $env:POSH_GIT_ENABLED = $true
 
 # UTF-8 all of the things
@@ -18,7 +18,7 @@ Import-Module oh-my-posh
 Import-Module PoshRSJob
 Import-Module PSFzf
 Import-Module yarn-completion
-Set-PoshPrompt -Theme G:\Users\Chase\Code\Scripts\Powershell\kixiron.omp.json
+Set-PoshPrompt -Theme C:\Users\Chase\Code\Powershell\terminal.omp.json
 
 # ---------------------------- Tab-complete & history search --------------------------
 
@@ -28,6 +28,10 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key Ctrl+c -Function Copy
 Set-PSReadLineKeyHandler -Key Ctrl+v -Function Paste
+# Make PSReadLine show completion hints
+Set-PSReadLineOption -PredictionSource History
+# Customize PSReadLine hint display
+Set-PSReadLineOption -Colors @{ InlinePrediction = "#82AAFF" }
 
 # Logic for matching quotes and braces
 Set-PSReadLineKeyHandler -Key '"', "'" `
@@ -822,11 +826,11 @@ Register-ArgumentCompleter -Native -CommandName 'rustup' -ScriptBlock {
         Sort-Object -Property ListItemText
 }
 
-$script:ElapsedTime = $script:StartTime.Elapsed
-Write-Host $(
-    [string]::Format(
-        "Loaded in {0}sec, {1:d2}ms",
-        $script:ElapsedTime.Seconds,
-        $script:ElapsedTime.Milliseconds
-    )
-)
+# $script:ElapsedTime = $script:StartTime.Elapsed
+# Write-Host $(
+#     [string]::Format(
+#         "Loaded in {0}sec, {1:d2}ms",
+#         $script:ElapsedTime.Seconds,
+#         $script:ElapsedTime.Milliseconds
+#     )
+# )
