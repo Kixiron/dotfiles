@@ -5,17 +5,24 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-Install-Module yarn-completion -Scope CurrentUser
+choco install fzf --yes
 
-function Add-WingetPackages {
+Install-Module yarn-completion
+Install-Module PSFzf
+Install-Module posh-git
+Install-Module oh-my-posh
+Install-Module PoshRSJob
+Install-Module PSReadLine
+
+function Install-WingetPackages {
     param ([string[]] $Packages)
     
     foreach ($Package in $Packages) {
-        winget install -e --id $Package --log
+        winget install -e --id $Package
     }
 }
 
-Add-WingetPackages @(
+Install-WingetPackages @(
     "Mozilla.Firefox",
     "Git.Git",
     "Microsoft.VisualStudioCode",
@@ -24,7 +31,7 @@ Add-WingetPackages @(
     "OpenJS.Nodejs",
     "7zip.7zip",
     "Spotify.Spotify",
-    "Python.Python",
+    "Python.Python.3",
     "GnuWin32.Make",
     "Kitware.CMake",
     "Microsoft.PowerToys",
@@ -40,16 +47,30 @@ Add-WingetPackages @(
     "Rustlang.rust-msvc"
 )
 
-choco install fzf --yes
-
 # Update rust
 rustup toolchain add nightly --force
 rustup update
 
-cargo install lsd --force
-cargo install cargo-make --force
-cargo install ripgrep --force
-cargo install tokei --force
+function Install-Crates {
+    param ([string[]] $Crates)
+    
+    foreach ($Crate in $Crates) {
+        cargo install $Crate --force
+    }
+}
+
+Install-Crates @(
+    "lsd",
+    "cargo-make",
+    "ripgrep",
+    "tokei",
+    "cargo-release"
+)
+
+# Allow python files to be executed
+cmd /c assoc .py=PythonScript
+cmd /c ftype PythonScript=C:\Users\Chase\AppData\Local\Programs\Python\Python39\python.exe "%1" %*
+setx PATHEXT %PATHEXT%;.PY
 
 # Additional things to install:
 # https://github.com/DynamoRIO/dynamorio/releases/latest
