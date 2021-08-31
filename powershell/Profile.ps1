@@ -235,14 +235,24 @@ Set-Alias -Name which -Value Get-Command -PassThru -Force | Out-Null
 function Set-OldEnvironmentalVariables {
     param(
         [hashtable]
-        $Variables
+        $ExpectedValues,
+
+        [hashtable]
+        $OldValues
     )
 
-    foreach ($Variable in $Variables.GetEnumerator()) {
-        if (-not $Variable) {
-            Remove-Item "Env:\$($Variable.Name)"
-        } else {
-            Set-Item "env:$($Variable.Name)" -Value $Variable.Value
+    foreach ($Value in $OldValues.GetEnumerator()) {
+        $Expected = $ExpectedValues[$Value.Key]
+        $Current = [System.Environment]::GetEnvironmentVariable($Variable.Key);
+
+        # If the user's script block didn't change the env var any,
+        # we reset it to the previous value
+        if ($Expected -eq $Current) {
+            if (-not $Value) {
+                Remove-Item "Env:\$($Value.Key)"
+            } else {
+                Set-Item "env:$($Value.Key)" -Value $Value.Value
+            }
         }
     }
 }
@@ -262,17 +272,17 @@ function Use-EnvVar {
     $OldValues = @{}
     $Error = $null
     foreach ($Variable in $Env.GetEnumerator()) {
-        if ($Variable.Name -eq "") {
+        if ($Variable.Key -eq "") {
             $Error = "cannot set an environmental variable without a name"
             break
         }
 
-        $OldValues[$Variable.Name] = [System.Environment]::GetEnvironmentVariable($Variable.Name);
+        $OldValues[$Variable.Key] = [System.Environment]::GetEnvironmentVariable($Variable.Key);
         Set-Item -Path "env:$($Variable.Key)" -Value $Variable.Value
     }
 
     if ($Error) {
-        Set-OldEnvironmentalVariables $OldValues
+        Set-OldEnvironmentalVariables $Env $OldValues
         throw $Error
     }
 
@@ -282,7 +292,7 @@ function Use-EnvVar {
         # Rethrow the exeception
         throw $_.Exception
     } finally {
-        Set-OldEnvironmentalVariables $OldValues
+        Set-OldEnvironmentalVariables $Env $OldValues
     }
 }
 
