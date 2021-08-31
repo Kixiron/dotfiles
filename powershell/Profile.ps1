@@ -1,3 +1,5 @@
+#Requires -Version 7
+
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
@@ -12,13 +14,13 @@ $PSDefaultParameterValues["*:Encoding"] = "utf8"
 
 # ----------------------------------- Load Modules -----------------------------------
 
+Import-Module PoshRSJob
 Start-RSJob -ModulesToImport posh-git {} | Out-Null
 Import-Module PSReadLine
 Import-Module oh-my-posh
-Import-Module PoshRSJob
 Import-Module PSFzf
 Import-Module yarn-completion
-Set-PoshPrompt -Theme C:\Users\Chase\Code\Powershell\terminal.omp.json
+Set-PoshPrompt -Theme G:\Users\Chase\Code\Powershell\terminal.omp.json
 
 # ---------------------------- Tab-complete & history search --------------------------
 
@@ -227,6 +229,62 @@ Set-Alias -Name grep -Value rg -PassThru | Out-Null
 Set-Alias -Name ls -Value lsd -Force -PassThru | Out-Null
 Set-Alias -Name nano -Value C:\Progra~1\Git\usr\bin\nano.exe -PassThru -Force | Out-Null
 Set-Alias -Name which -Value Get-Command -PassThru -Force | Out-Null
+
+# --------------------------------- Utility Functions ---------------------------------
+
+function Set-OldEnvironmentalVariables {
+    param(
+        [hashtable]
+        $Variables
+    )
+
+    foreach ($Variable in $Variables.GetEnumerator()) {
+        if (-not $Variable) {
+            Remove-Item "Env:\$($Variable.Name)"
+        } else {
+            Set-Item "env:$($Variable.Name)" -Value $Variable.Value
+        }
+    }
+}
+
+function Use-EnvVar {
+    [CmdletBinding()]
+    param(
+        [ValidateNotNull()]
+        [hashtable]
+        $Env = @{},
+
+        [ValidateNotNull()]
+        [scriptblock]
+        $ScriptBlock
+    )
+
+    $OldValues = @{}
+    $Error = $null
+    foreach ($Variable in $Env.GetEnumerator()) {
+        if ($Variable.Name -eq "") {
+            $Error = "cannot set an environmental variable without a name"
+            break
+        }
+
+        $OldValues[$Variable.Name] = [System.Environment]::GetEnvironmentVariable($Variable.Name);
+        Set-Item -Path "env:$($Variable.Key)" -Value $Variable.Value
+    }
+
+    if ($Error) {
+        Set-OldEnvironmentalVariables $OldValues
+        throw $Error
+    }
+
+    try {
+        Invoke-Command -ScriptBlock $ScriptBlock -NoNewScope
+    } catch {
+        # Rethrow the exeception
+        throw $_.Exception
+    } finally {
+        Set-OldEnvironmentalVariables $OldValues
+    }
+}
 
 # ------------------------------------ Completions ------------------------------------
 

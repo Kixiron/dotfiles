@@ -8,6 +8,13 @@ param(
     $Email = "me@chasewilson.dev"
 )
 
+function Test-ProcessAdmin {
+    $CurrentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent([Security.Principal.TokenAccessLevels]'Query,Duplicate'))
+    $IsAdmin = $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+    return $IsAdmin
+}
+
 function New-TemporaryDirectory {
     $parent = [System.IO.Path]::GetTempPath()
     $item = $null
@@ -92,6 +99,10 @@ function Set-GitConfigs {
     }
 }
 
+if (-not $(Test-ProcessAdmin)) {
+    Write-Warning "Setup.ps1 may not function correctly unless launched from an admin shell"
+}
+
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
 # Create a temp folder for setup to occur in
@@ -102,16 +113,15 @@ $InstallFolder = New-TemporaryDirectory
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 Install-ChocoPackages @("fzf")
-RefreshEnv.cmd
 
 # Install powershell profile
 New-Item -Path $env:PROFILE -ItemType "file" -Force
 
-$IosevkaParams = @{
+$ProfileParams = @{
     Uri     = "https://raw.githubusercontent.com/Kixiron/dotfiles/master/powershell/Profile.ps1";
     OutFile = "$env:PROFILE";
 }
-Invoke-WebRequest @IosevkaParams
+Invoke-WebRequest @ProfileParams
 
 Install-Modules @(
     "yarn-completion",
@@ -121,14 +131,9 @@ Install-Modules @(
     "PoshRSJob",
     "PSReadLine"
 )
-RefreshEnv.cmd
 
-try {
-    # Update powershell's help with the newly added modules
-    Update-Help
-} catch {
-    # Ignore any errors, we don't care
-}
+# Update powershell's help with the newly added modules
+Update-Help -ErrorAction Ignore
 
 Install-WingetPackages @(
     "Mozilla.Firefox",
@@ -160,8 +165,6 @@ $SpotifyParams = @{
 }
 Start-Process @SpotifyParams
 
-RefreshEnv.cmd
-
 # Setup git
 Set-GitConfigs @{
     # Set the user and email
@@ -181,7 +184,9 @@ Invoke-RestMethod -Uri "https://win.rustup.rs/x86_64"-OutFile $RustupInit
 
 # Install rust
 & "$RustupInit --profile complete"
-RefreshEnv.cmd
+
+# Update the path with rust's stuff
+$env:PATH += ";$env:HOME\.cargo\bin"
 
 # Add the nightly toolchain and update rust
 rustup toolchain add nightly --force
@@ -204,7 +209,7 @@ Install-Crates @(
 
 # Allow python files to be executed from the commandline
 cmd /c "assoc .py=PythonScript"
-cmd /c "ftype PythonScript=$HOME\AppData\Local\Programs\Python\Python39\python.exe `"%1`" %*"
+cmd /c "ftype PythonScript=$env:HOME\AppData\Local\Programs\Python\Python39\python.exe `"%1`" %*"
 setx PATHEXT "%PATHEXT%;.PY"
 
 # Set up SSH
@@ -214,9 +219,13 @@ Set-Service -Name sshd -StartupType "Automatic"
 
 # Clone Iosevka
 git clone "https://github.com/be5invis/Iosevka" --depth 1 $InstallFolder
+
 # Download iosevka build plan
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Kixiron/dotfiles/master/powershell/private-build-plans.toml" `
-    -OutFile $(Join-Path $InstallFolder "Iosevka" "private-build-plans.toml")
+$IosevkaParams = @{
+    Uri     = "https://raw.githubusercontent.com/Kixiron/dotfiles/master/powershell/private-build-plans.toml";
+    OutFile = $(Join-Path $InstallFolder "Iosevka" "private-build-plans.toml");
+}
+Invoke-WebRequest @IosevkaParams
 
 # Download ttfautohint
 $TtfAutoHintDir = Join-Path $InstallFolder "ttf_auto_hint"
@@ -229,19 +238,23 @@ $TtfAutoHintParams = @{
 Invoke-WebRequest @TtfAutoHintParams
 
 # Build Iosevka
-Set-Location $(Join-Path $InstallFolder "Iosevka")
-yarn install
-yarn run build ttf::iosevka-custom
+Push-Location $(Join-Path $InstallFolder "Iosevka")
+try {
+    yarn install
+    yarn run build ttf::iosevka-custom
 
-# Make destination directory
-$FontDir = Join-Path $HOME "Code" "Fonts" "Iosevka"
-New-Item -Path $FontDir -ItemType "directory" -Force
+    # Make destination directory
+    $FontDir = Join-Path $HOME "Code" "Fonts" "Iosevka"
+    New-Item -Path $FontDir -ItemType "directory" -Force
 
-# Move the files into their font dir
-Move-Item -Path $(Join-Path $InstallFolder "Iosevka" "dist" "iosevka-custom" "ttf") `
-    -Destination $FontDir
-# TODO: Install the fonts???
-# TODO: FiraCode and FiraMono https://www.nerdfonts.com/font-downloads
+    # Move the files into their font dir
+    $IosevkaTtf = Join-Path $InstallFolder "Iosevka" "dist" "iosevka-custom" "ttf"
+    Move-Item -Path $IosevkaTtf -Destination $FontDir
+    # TODO: Install the fonts???
+    # TODO: FiraCode and FiraMono https://www.nerdfonts.com/font-downloads
+} finally {
+    Pop-Location
+}
 
 # Delete the temporary directory
 Remove-Item $InstallFolder -Recurse -Force
