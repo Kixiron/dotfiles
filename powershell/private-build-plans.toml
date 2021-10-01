@@ -25,17 +25,15 @@ spacing = "normal"
             paragraph-sign = "high"
 
         [buildPlans.iosevka-custom.ligations]
+        inherits = "haskell"
         enables = [
             "arrow",
             "arrow2",
-            "brace-bar",
-            "brack-bar",
             "brst",
             "connected-hyphen-as-semi-dashed-line",
             "connected-number-sign",
             "connected-tilde-as-wave",
             "connected-underscore",
-            "dot-as-operator",
             "eqeq",
             "eqeqeq",
             "exeq",
@@ -49,4 +47,8 @@ spacing = "normal"
             "plusplus",
             "trig",
         ]
-        inherits = "haskell"
+        disables = [
+            "slasheq",
+            "brace-bar",
+            "brack-bar",
+        ]
